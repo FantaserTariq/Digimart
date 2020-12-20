@@ -1,9 +1,7 @@
 import asyncHandler from 'express-async-handler'
 import Product from '../models/productModel.js'
 
-// @desc    Fetch all products
-// @route   GET /api/products
-// @access  Public
+//Get Products
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 10
   const page = Number(req.query.pageNumber) || 1
@@ -25,9 +23,7 @@ const getProducts = asyncHandler(async (req, res) => {
   res.json({ products, page, pages: Math.ceil(count / pageSize) })
 })
 
-// @desc    Fetch single product
-// @route   GET /api/products/:id
-// @access  Public
+// FInd  by ID
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id)
 
@@ -39,9 +35,7 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 })
 
-// @desc    Delete a product
-// @route   DELETE /api/products/:id
-// @access  Private/Admin
+// Delete a product
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id)
 
