@@ -27,6 +27,33 @@ const Header = () => {
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav className='ml-auto'>
+              <LinkContainer to='/'>
+                <Nav.Link>
+                  Home
+                </Nav.Link>                
+              </LinkContainer>
+              <LinkContainer to='/'>
+                <Nav.Link>
+                  About
+                </Nav.Link>                
+              </LinkContainer>
+              <LinkContainer to='/'>
+                <Nav.Link>
+                  Products
+                </Nav.Link>                
+              </LinkContainer>
+              <LinkContainer to='/'>
+                <Nav.Link>
+                  Customer Care
+                </Nav.Link>                
+              </LinkContainer>
+              <LinkContainer to='/'>
+                <Nav.Link>
+                  Become a Seller
+                </Nav.Link>                
+              </LinkContainer>
+            </Nav>
+            <Nav className='ml-auto'>
               <LinkContainer to='/cart'>
                 <Nav.Link>
                   <i className='fas fa-shopping-cart'></i>

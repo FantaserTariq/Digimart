@@ -11,6 +11,7 @@ import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
 import Footer from '../components/Footer'
 
+
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
 
@@ -54,7 +55,11 @@ const HomeScreen = ({ match }) => {
             page={page}
             keyword={keyword ? keyword : ''}
           />
-          <Footer />
+          
+          <>
+            
+        </>
+         
         </>
       )}
     </>

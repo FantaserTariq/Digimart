@@ -34,7 +34,6 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
       `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
 
-    const payload = { data, page: 0, pages: 0 }
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
       payload: data,

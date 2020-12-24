@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -18,15 +18,21 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
-
+import Navbar from './components/navbar/Navbar'
+import { Fragment } from 'react'
 
 const App = () => {
   return (
-    <Router>
+  <Fragment>
+    
+      <Router>
       <Header />
+      
       <main className='py-3'>
         <Container>
-          <Route path='/order/:id' component={OrderScreen} />
+         <Switch>
+         
+         <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
@@ -57,10 +63,14 @@ const App = () => {
             exact
           />
           <Route path='/' component={HomeScreen} exact />
+         </Switch>
         </Container>
       </main>
+      <Footer />
     </Router>
-  )
+  
+  </Fragment>
+    )
 }
 
 export default App
